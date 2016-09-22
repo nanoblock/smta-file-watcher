@@ -6,6 +6,12 @@ class Watcher
 	# require 'uri'
 	require 'pathname'
 
+	attr_accessor :path
+
+	def initialize(path: '/Users/grep/workspace/development/grep/public/images/**/*.xml')
+		@path = path.to_s
+	end
+
 	def filewatcher_init
 		@filewatcher = FileWatcher.new(["/Users/grep/workspace/development/grep/public/images/**/*.xml"]) # **/*.xml
 	end
